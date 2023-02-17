@@ -55,12 +55,13 @@ public class CreateControler : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
             Fire();
 
-        void FixedUpdate()
+        
+    }
+    void FixedUpdate()
         {
             rb.AddForce(transform.forward * input.y * enginePower, ForceMode.Acceleration);
             rb.AddTorque(transform.up * input.x * gyroPower, ForceMode.Acceleration);
         }
-    }
     void Fire()
     {
         GameObject leftBullet = Instantiate(bulletPrefab, GunLeft.position, Quaternion.identity);
